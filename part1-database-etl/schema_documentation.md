@@ -79,7 +79,29 @@ PRODUCTS
 A relation is in Third Normal Form (3NF) if it is in 2NF and has no transitive dependency, i.e., every non-key attribute depends only on a candidate key.
 
 ### Customers
-Primary Key: customer_id
-Alternate Key: email
-FD: customer_id → all other attributes
-Justification: All non-key attributes depend directly on the primary/alternate key with no transitive dependency.
+
+- Primary Key: customer_id
+- Alternate Key: email
+- FD: customer_id → all other attributes
+- Justification: All non-key attributes depend directly on the primary/alternate key with no transitive dependency.
+
+### Products
+
+- Primary Key: product_id
+- FD: product_id → product_name, category, price, stock_quantity
+- Justification: All attributes are fully functionally dependent on the primary key.
+
+### Orders
+
+- Primary Key: order_id
+- FD: order_id → customer_id, order_date, total_amount, status
+- Justification: Customer details are not stored in this table, preventing transitive dependencies.
+
+### Order_Items
+
+- Primary Key: order_item_id
+- Natural Key: (order_id, product_id)
+- FD: (order_id, product_id) → quantity, unit_price, subtotal
+Note: subtotal is a derived attribute (quantity × unit_price)
+⚠️ Strict 3NF violated due to derived attribute
+✅ Acceptable denormalization in practice
