@@ -105,3 +105,5 @@ A relation is in Third Normal Form (3NF) if it is in 2NF and has no transitive d
 Note: subtotal is a derived attribute (quantity × unit_price)
 ⚠️ Strict 3NF violated due to derived attribute
 ✅ Acceptable denormalization in practice
+
+**All tables satisfy Third Normal Form (3NF). The only exception is the subtotal attribute in order_items, which represents controlled denormalization for performance and does not introduce update anomalies.**
