@@ -77,12 +77,16 @@ PRODUCTS
 ## Third Normal Form (3NF) Justification:
 
 A relation is in Third Normal Form (3NF) if it is in 2NF and has no transitive dependency, i.e., every non-key attribute depends only on a candidate key.
+**Formally:**
+For every functional dependency X → A, either:
+X is a superkey, or
+A is a prime attribute
 
 ### Customers
 
 - Primary Key: customer_id
-- Alternate Key: email
-- FD: customer_id → all other attributes
+- Alternate Key: email (Unique)
+- FD: customer_id → first_name, last_name, email, phone, city, registration_date; email → first_name, last_name, phone, city, registration_date
 - Justification: All non-key attributes depend directly on the primary/alternate key with no transitive dependency.
 
 ### Products
@@ -106,4 +110,4 @@ Note: subtotal is a derived attribute (quantity × unit_price)
 ⚠️ Strict 3NF violated due to derived attribute
 ✅ Acceptable denormalization in practice
 
-**All tables satisfy Third Normal Form (3NF). The only exception is the subtotal attribute in order_items, which represents controlled denormalization for performance and does not introduce update anomalies.**
+**The schema satisfies Third Normal Form (3NF) as all non-key attributes in each relation are fully functionally dependent on the primary key and there are no transitive dependencies. The order_items.subtotal attribute represents a deliberate denormalization for performance optimization and does not introduce update anomalies under controlled application logic.**
