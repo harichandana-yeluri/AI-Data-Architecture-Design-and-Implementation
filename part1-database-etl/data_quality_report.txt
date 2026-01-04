@@ -13,6 +13,7 @@ Data Quality Report
 - Issues:
   - Inconsistent date formats in 'registration_date' (e.g., '15/04/2023', '08-15-2023').
   - Missing email addresses for some customers.
+  - Duplicate records based on 'customer_id'.
   - Inconsistent phone number formats (e.g., presence of country code, leading zeros).
 
 2. Products Dataset
@@ -23,3 +24,26 @@ Data Quality Report
     - 'price': 3 missing values filled with average price per category.
     - 'stock_quantity': 1 missing value filled with 0.
 - Records Loaded: 20 records
+
+- Issues:
+  - Inconsistent capitalization in 'category' (e.g., 'Electronics', 'fashion', 'ELECTRONICS').
+  - Missing prices for some products.
+  - Missing stock quantities for some products.
+
+3. Sales Dataset
+-------------------
+- Records processed: 41 records
+- Duplicates: 1 record
+  - 1 duplicate records found based on 'transaction_id'.
+- Missing Values Handled: 3 records
+    - 'customer_id': 3 missing values dropped.
+    - 'product_id': 2 missing value dropped.
+- Records Loaded: 27 records
+
+Here only 27 records were loaded after because few of the customer_id are dropped from customers table after elimination of missing emails, this effected the records in sales.
+
+- Issues:
+  - Inconsistent date formats in 'transaction_date' (e.g., '15/01/2024', '01-22-2024').
+  - Missing customer IDs for some transactions.
+  - Missing product IDs for some transactions.
+  - Duplicate records based on 'transaction_id'.
