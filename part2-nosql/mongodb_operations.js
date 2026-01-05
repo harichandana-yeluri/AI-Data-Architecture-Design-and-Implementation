@@ -132,8 +132,48 @@ async function reviewAnalysis() {
   }
 }
 
+async function addReview() {
+  const client = new MongoClient(MONGO_URL);
+
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+
+    const db = client.db(DB_NAME);
+    const collection = db.collection(COLLECTION_NAME);
+
+    // New review object
+    const newReview = {
+      user_id: "U999",
+      rating: 4,
+      comment: "Good value",
+      date: new Date() // current ISODate
+    };
+
+    // Update operation: push new review into reviews array
+    const result = await collection.updateOne(
+      { product_id: "ELEC001" },   // filter
+      { $push: { reviews: newReview } } // update
+    );
+
+    if (result.matchedCount === 0) {
+      console.log("No product found with product_id ELEC001");
+    } else if (result.modifiedCount === 1) {
+      console.log("New review added successfully!");
+    } else {
+      console.log("Update completed, but no changes were made.");
+    }
+  } catch (error) {
+    console.error("Error adding review:", error);
+  } finally {
+    await client.close();
+    console.log("MongoDB connection closed");
+  }
+}
+
+
 // Import the provided JSON file into collection 'products_catalog'
-loadData();
+// loadData();
 
 // Basic Query: Find all products in "Electronics" category with price less than 50000
 // Return only: name, price, stock
@@ -142,3 +182,7 @@ basicQuery();
 // Review Analysis: Find all products that have average rating >= 4.0
 // Use aggregation to calculate average from reviews array
 reviewAnalysis();
+
+// Update Operation: Add a new review to product "ELEC001"
+// Review: {user: "U999", rating: 4, comment: "Good value", date: ISODate()}
+addReview();
