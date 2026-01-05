@@ -64,5 +64,15 @@ MongoDB allows embedded documents and arrays, enabling related data to be stored
 **Advantages:**
 - Eliminates the need for joins to fetch product and review data
 - Improves read performance by retrieving all relevant information in a single query
-- Accurately represents real-world hierarchical relationships
+- Accurately represents real-world hierarchical relationships<br>
 As a result, MongoDB handles nested and one-to-many relationships more efficiently than relational databases.
+
+### 3. Horizontal scalability
+MongoDB is built to support horizontal scaling through a mechanism known as sharding.
+- Data is distributed across multiple servers (shards) based on a shard key (e.g., product_id or category).
+- As the dataset grows, additional servers can be added to the cluster without downtime.
+**Key advantages:**
+- Handles large volumes of products, reviews, and user activity efficiently
+- Maintains high availability and performance under increasing load
+- Avoids the vertical scaling limitations common in relational databases<br>
+This makes MongoDB highly suitable for large-scale, high-traffic applications.
