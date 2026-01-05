@@ -1,6 +1,6 @@
 ## Section A: Limitations of RDBMS
 
-A traditional relational database management system (RDBMS) is designed around fixed schemas, normalised tables, and predefined relationships. While this approach works well for structured and uniform data, it becomes inefficient and complex when handling highly variable and evolving datasets such as the given product catalogue. The following points explain, in detail, why a relational database would struggle with the stated requirements
+A traditional relational database management system (RDBMS) is designed around fixed schemas, normalised tables, and predefined relationships. While this approach works well for structured and uniform data, it becomes inefficient and complex when handling highly variable and evolving datasets such as the given products_catalog. The following points explain, in detail, why a relational database would struggle with the stated requirements
 
 ### 1. Products having different attributes (e.g., laptops have RAM/processor, shoes have size/color)
 In a relational database, all records in a table must conform to the same schema. This becomes problematic when products belonging to different categories require distinct sets of attributes.
@@ -76,3 +76,8 @@ MongoDB is built to support horizontal scaling through a mechanism known as shar
 - Maintains high availability and performance under increasing load. 
 - Avoids the vertical scaling limitations common in relational databases.<br>
 This makes MongoDB highly suitable for large-scale, high-traffic applications.
+
+## Section C: Trade-offs
+
+### What are two disadvantages of using MongoDB instead of MySQL for this product catalog?
+Using MongoDB instead of MySQL for the given product catalog offers flexibility, but it also introduces certain disadvantages. Two significant disadvantages are explained below:
