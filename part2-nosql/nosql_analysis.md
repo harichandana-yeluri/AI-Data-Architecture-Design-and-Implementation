@@ -83,17 +83,36 @@ This makes MongoDB highly suitable for large-scale, high-traffic applications.
 Using MongoDB instead of MySQL for the given products_catalog offers flexibility, but it also introduces certain disadvantages. Two significant disadvantages are explained below:
 
 **1. Lack of Strong Relational Integrity and Joins**
-MongoDB is a NoSQL document-oriented database and does not enforce foreign key constraints or strong relational integrity in the same way MySQL does. In the context of this product catalog, entities such as products, reviews, users, and categories are embedded or loosely related within documents.
-**As a result:**
-    - There is no automatic enforcement of referential integrity between related data (e.g., user IDs in reviews are not validated against a users collection).
-    - Complex relationships and cross-entity queries require manual handling at the application level, which increases development complexity.
-    - Performing multi-collection joins using MongoDB’s $lookup is less efficient and more complex compared to SQL joins in MySQL.<br>
-This makes MongoDB less suitable when strict relational consistency and complex relational queries are required.
+Using **MongoDB**, a NoSQL document-oriented database, instead of **MySQL**, a relational database, introduces certain limitations when managing a structured product catalog. Two major disadvantages are discussed below.
 
-**2. Weaker Support for Complex Transactions and ACID Guarantees**
-Although MongoDB supports transactions, they are more limited and less performant compared to MySQL’s mature ACID-compliant transaction handling.
-**In the case of this product catalog:**
-    - Operations such as simultaneously updating stock levels, order records, and review statistics across multiple documents or collections are harder to manage efficiently.
-    - Multi-document transactions introduce performance overhead and increase system complexity.
-    - MySQL provides robust, well-optimised transactional support, which is particularly advantageous for inventory management systems where data consistency is critical.<br>
-Therefore, MongoDB may be less reliable than MySQL for workloads requiring frequent, complex, multi-table transactional operations.
+---
+
+### 1. Lack of Strong Relational Integrity and Join Support
+
+MongoDB does not enforce **foreign key constraints** or strict relational integrity. In the given product catalog, related data such as **products, reviews, users, and categories** are stored either as embedded documents or as loosely connected collections.
+
+As a consequence:
+- Referential integrity between related entities is **not automatically enforced**.
+- Relationships must be managed at the **application level**, increasing development complexity.
+- Performing joins using MongoDB’s `$lookup` aggregation stage is **less efficient and more complex** compared to native SQL joins in MySQL.
+
+This makes MongoDB less suitable for systems that require strong relational consistency and complex inter-table queries.
+
+---
+
+### 2. Weaker Support for Complex ACID Transactions
+
+Although MongoDB supports transactions, they are generally **less mature and less efficient** than those in MySQL, which is fully **ACID-compliant**.
+
+For this product catalog:
+- Coordinated updates such as **inventory changes, order processing, and review updates** across multiple documents are more difficult to handle reliably.
+- Multi-document transactions in MongoDB introduce **performance overhead**.
+- MySQL provides **robust transactional guarantees**, ensuring strong data consistency in high-integrity systems.
+
+Therefore, MongoDB is less optimal for applications requiring frequent and complex transactional operations.
+
+---
+
+### Conclusion
+
+While MongoDB offers flexibility and scalability, its **limited relational integrity** and **weaker transactional capabilities** compared to MySQL make it a disadvantageous choice for a highly structured and consistency-sensitive product catalog.
