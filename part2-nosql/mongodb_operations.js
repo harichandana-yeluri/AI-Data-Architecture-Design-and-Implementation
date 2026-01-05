@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 
 // MongoDB connection URL and database name
-const MONGO_URL="mongodb+srv://<username>:<password>@bitsom-ai-course.s461hof.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL="<YOUR_MONGODB_CONNECTION_STRING>";
 const DB_NAME="Fleximart";
 const COLLECTION_NAME="products_catalog";
 // Path to the JSON data file
