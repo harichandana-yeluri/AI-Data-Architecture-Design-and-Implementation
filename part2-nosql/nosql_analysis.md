@@ -51,8 +51,18 @@ MongoDB stores data in JSON-like BSON documents, where each document can have a 
         - A smartphone document may include RAM, a processor, and a battery.
         - A clothing document may include sizes_available, material, and fit.
 - There is no requirement for all documents in a collection to share identical fields.
-Advantages:
+**Advantages:**
     - Eliminates the need for nullable columns or multiple subtype tables
     - Simplifies data modelling for diverse product categories
     - Allows rapid iteration and adaptation to business requirements<br>
 Thus, MongoDB naturally supports heterogeneous product attributes within a single collection.
+
+### 2. Embedded documents (reviews within products)
+MongoDB allows embedded documents and arrays, enabling related data to be stored together in a single document.
+- In the given dataset, customer reviews are embedded directly inside each product document as an array of review objects.
+- This design aligns with MongoDB’s principle of data locality, where frequently accessed related data is stored together.
+**Advantages:**
+- Eliminates the need for joins to fetch product and review data
+- Improves read performance by retrieving all relevant information in a single query
+- Accurately represents real-world hierarchical relationships
+As a result, MongoDB handles nested and one-to-many relationships more efficiently than relational databases.
