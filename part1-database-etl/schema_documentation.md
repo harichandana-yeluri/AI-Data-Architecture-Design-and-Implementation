@@ -111,3 +111,14 @@ Note: subtotal is a derived attribute (quantity × unit_price)
 ✅ Acceptable denormalization in practice
 
 **The schema satisfies Third Normal Form (3NF) as all non-key attributes in each relation are fully functionally dependent on the primary key and there are no transitive dependencies. The order_items.subtotal attribute represents a deliberate denormalization for performance optimization and does not introduce update anomalies under controlled application logic.**
+
+
+## Sample Data Representation
+
+### Customers table:
+| customer_id | first_name | last_name | email                                                       | phone          | city      | registration_date |
+| ----------- | ---------- | --------- | ----------------------------------------------------------- | -------------- | --------- | ----------------- |
+| C001        | Rahul      | Sharma    | [rahul.sharma@gmail.com](mailto:rahul.sharma@gmail.com)     | +91-9876543210 | Bangalore | 2023-01-15        |
+| C002        | Priya      | Patel     | [priya.patel@yahoo.com](mailto:priya.patel@yahoo.com)       | +91-9988776655 | Mumbai    | 2023-02-20        |
+| C004        | Sneha      | Reddy     | [sneha.reddy@gmail.com](mailto:sneha.reddy@gmail.com)       | +91-9123456789 | Hyderabad | 2023-04-15        |
+| C005        | Vikram     | Singh     | [vikram.singh@outlook.com](mailto:vikram.singh@outlook.com) | +91-9988112233 | Chennai   | 2023-05-22        |
