@@ -3,7 +3,7 @@
 -- January – February 2024
 -- =========================
 
-INSERT INTO dim_date VALUES
+INSERT INTO dim_date (date_key, full_date, day_of_week, day_of_month, month, month_name, quarter, year, is_weekend) VALUES
 (20240101,'2024-01-01','Monday',1,1,'January','Q1',2024,false),
 (20240102,'2024-01-02','Tuesday',2,1,'January','Q1',2024,false),
 (20240103,'2024-01-03','Wednesday',3,1,'January','Q1',2024,false),
