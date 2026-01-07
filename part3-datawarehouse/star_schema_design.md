@@ -141,6 +141,7 @@ Order # 101, Customer "John Doe", Product "Laptop", Qty: 2, Price: 50000
     - The transformed data is loaded into the fact and dimension tables.
 
 **Becomes in Data Warehouse:**
+
 **dim_date**
 {
   date_key: 20240115,
