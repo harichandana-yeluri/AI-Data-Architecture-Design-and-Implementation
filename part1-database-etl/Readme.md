@@ -30,12 +30,13 @@ The queries address specific business scenarios such as customer purchase histor
 This file provides a detailed summary of the data quality checks and transformations applied during the ETL process. This report ensures transparency and traceability of data cleaning operations.
 
 **Generated report includes:**
+
     - Number of records processed per file
 
     - Number of duplicates removed
 
     - Number of missing values handled
-    
+
     - Number of records loaded successfully
 
 ### schema_documentation
