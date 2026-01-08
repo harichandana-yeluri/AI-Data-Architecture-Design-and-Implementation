@@ -1,4 +1,4 @@
-# Database Design and ETL Pipeline
+# DNoSQL Database Analysis
 
 ## Sub-section overview:
 In this subsection, the focus is on working with product catalog data using MongoDB, a NoSQL database. The dataset is ingested into MongoDB and analyzed using basic to advanced aggregation and grouping queries to derive insights for specific business scenarios.
