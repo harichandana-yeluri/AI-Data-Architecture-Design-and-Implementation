@@ -82,7 +82,7 @@ Through this project, I learned how to clean and transform raw data and ingest i
 
 ## Challenges Faced
 
-1. **Problem faced**:
+1. **Problem faced**: Encountered problem while ingesting data
     - **solution:** 
 
 
