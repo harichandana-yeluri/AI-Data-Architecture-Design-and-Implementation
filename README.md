@@ -18,16 +18,20 @@ In this project, three different structures are used to represent various stages
 │   ├── etl_pipeline.py
 │   ├── schema_documentation.md
 │   ├── business_queries.sql
-│   └── data_quality_report.txt
+│   ├── data_quality_report.txt
+│   ├── requirements.txt
+│   └── README.md
 ├── part2-nosql/
 │   ├── nosql_analysis.md
 │   ├── mongodb_operations.js
-│   └── products_catalog.json
+│   ├── products_catalog.json
+│   └── README.md
 ├── part3-datawarehouse/
 │   ├── star_schema_design.md
 │   ├── warehouse_schema.sql
 │   ├── warehouse_data.sql
-│   └── analytics_queries.sql
+│   ├── analytics_queries.sql
+│   └── README.md
 └── README.md
 ```
 
@@ -53,6 +57,7 @@ To execute this project smoothly, ensure that **Python**, **Pandas**, **MySQL**,
 
 # Create databases
 mysql -u root -p -e "CREATE DATABASE fleximart;"
+
 mysql -u root -p -e "CREATE DATABASE fleximart_dw;"
 
 # Run Part 1 - ETL Pipeline
@@ -63,7 +68,9 @@ mysql -u root -p fleximart < part1-database-etl/business_queries.sql
 
 # Run Part 3 - Data Warehouse
 mysql -u root -p fleximart_dw < part3-datawarehouse/warehouse_schema.sql
+
 mysql -u root -p fleximart_dw < part3-datawarehouse/warehouse_data.sql
+
 mysql -u root -p fleximart_dw < part3-datawarehouse/analytics_queries.sql
 
 
@@ -77,8 +84,7 @@ mysql -u root -p fleximart_dw < part3-datawarehouse/analytics_queries.sql
 mongosh < part2-nosql/mongodb_operations.js
 
 ## Key Learnings
-Through this project, I learned how to clean and transform raw data and ingest it into a structured database, followed by querying the data to derive meaningful analysis. I also gained experience in ingesting data into MongoDB and performing queries on semi-structured data based on business requirements. Additionally, I learned how to design and implement ETL processes to move data from an OLTP system to an OLAP system. The project also helped me understand star schema design and how to generate analytical reports using a data warehouse.
-
+Through this project, I gained hands-on experience in cleaning and transforming raw data and ingesting it into a structured relational database, followed by querying the data to derive meaningful insights. I also developed practical knowledge of ingesting and querying semi-structured data using MongoDB based on specific business requirements. Additionally, the project enhanced my understanding of ETL processes for migrating data from OLTP systems to OLAP systems. Finally, I learned how to design and implement a star schema and generate analytical reports using a data warehouse.
 
 ## Challenges Faced
 
