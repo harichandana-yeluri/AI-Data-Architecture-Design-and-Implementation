@@ -29,7 +29,7 @@ In this project, three different structures are used to represent various stages
 │   ├── warehouse_data.sql
 │   └── analytics_queries.sql
 └── README.md
-```text
+```
 
 ## Technologies Used
 
